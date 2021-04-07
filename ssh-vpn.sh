@@ -1,5 +1,5 @@
 #!/bin/bash
-# By Horasss
+# By LostServer
 # 
 # ==================================================
 
@@ -15,10 +15,10 @@ ver=$VERSION_ID
 country=ID
 state=Indonesia
 locality=Indonesia
-organization=www.vpnstores.net
-organizationalunit=www.vpnstores.net
-commonname=www.vpnstores.net
-email=admin@.vpnstores.net
+organization=lostserver.xyz
+organizationalunit=lostserver.xyz
+commonname=lostserver.xyz
+email=admin@lostserver.xyz
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/password"
