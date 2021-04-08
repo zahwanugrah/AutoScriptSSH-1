@@ -521,7 +521,7 @@ wget -O renewtr "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/mai
 wget -O xp-ws "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-ws.sh"
 wget -O xp-tr "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-tr.sh"
 wget -O xp-vless "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-vless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/cert.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/certv2ray.sh"
 chmod +x addws
 chmod +x addvless
 chmod +x addtr
