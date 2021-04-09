@@ -20,7 +20,7 @@ echo "Only For Premium Users"
 exit 0
 fi
 apt install jq curl -y
-DOMAIN=myvmess.xyz
+DOMAIN=lostserver.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.lostserver.xyz
 CF_ID=yovan83@live.com
