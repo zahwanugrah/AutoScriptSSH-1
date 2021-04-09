@@ -17,6 +17,7 @@ echo -e "${green}Permission Accepted...${NC}"
 else
 echo -e "${red}Permission Denied!${NC}";
 echo "Only For Premium Users"
+rm -f setup.sh
 exit 0
 fi
 mkdir /var/lib/premium-script;
@@ -80,6 +81,5 @@ echo ""  | tee -a log-install.txt
 echo "------------------Lost Server-----------------" | tee -a log-install.txt
 echo ""
 echo " Reboot 10 Sec"
-rm -f setup.sh
 sleep 10
 reboot
