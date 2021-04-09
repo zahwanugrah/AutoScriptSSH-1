@@ -18,8 +18,8 @@ rm -f /root/go.sh
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+/root/.acme.sh/acme.sh --issue -d $domain --standalone --keylength ec-256
+~/.acme.sh/acme.sh --install-cert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cat> /etc/v2ray/config.json << END
 {
@@ -53,7 +53,7 @@ cat> /etc/v2ray/config.json << END
           ]
         },
         "wsSettings": {
-          "path": "/lostserver",
+          "path": "/v2ray",
           "headers": {
             "Host": ""
           }
@@ -141,7 +141,7 @@ cat> /etc/v2ray/none.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/lostserver",
+          "path": "/v2ray",
           "headers": {
             "Host": ""
           }
@@ -238,7 +238,7 @@ cat> /etc/v2ray/vless.json << END
           ]
         },
         "wsSettings": {
-          "path": "/lostserver",
+          "path": "/v2ray",
           "headers": {
             "Host": ""
           }
@@ -325,7 +325,7 @@ cat> /etc/v2ray/vnone.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/lostserver",
+          "path": "/v2ray",
           "headers": {
             "Host": ""
           }
