@@ -53,8 +53,6 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
 echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
-rm -f setup.sh
-exit 0
 fi
 mkdir /var/lib/premium-script;
 echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
@@ -115,5 +113,6 @@ echo ""  | tee -a log-install.txt
 echo "------------------Lost Server-----------------" | tee -a log-install.txt
 echo ""
 echo " Reboot 10 Sec"
+rm -f setup.sh
 sleep 10
 reboot
