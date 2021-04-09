@@ -22,9 +22,9 @@ fi
 apt install jq curl -y
 DOMAIN=myvmess.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.myvmess.xyz
-CF_ID=amsalsiregar12@gmail.com
-CF_KEY=d7646d2edd8f564e0da635c6b8b71c5fba0e2
+SUB_DOMAIN=${sub}.lostserver.xyz
+CF_ID=yovan83@live.com
+CF_KEY=c2547eb745079dac9320b638f5e225cf483cc5cfdda41
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${SUB_DOMAIN}..."
