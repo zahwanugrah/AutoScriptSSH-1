@@ -31,7 +31,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       "id": "${uuid}",
       "aid": "2",
       "net": "ws",
-      "path": "/lostserver",
+      "path": "/v2ray",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
@@ -46,7 +46,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "id": "${uuid}",
       "aid": "2",
       "net": "ws",
-      "path": "/lostserver",
+      "path": "/v2ray",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -67,7 +67,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 2"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /lostserver"
+echo -e "path           : /v2ray"
 echo -e "================================="
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "================================="
