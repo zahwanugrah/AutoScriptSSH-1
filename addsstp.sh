@@ -1,6 +1,6 @@
 #!/bin/bash
 IP=$(wget -qO- ifconfig.co);
-pass2="vpn"
+pass2="dg"
 psk="vpn"
 read -p "Username: " user
 read -p "Password: " pass
@@ -22,7 +22,7 @@ cat <<EOF
 ================================
 SSTP VPN 
 Server IP     : $IP
-Host	        : ${domain}
+Host	       : $domain
 Username      : $user
 Password      : $pass
 Port          : 5555
