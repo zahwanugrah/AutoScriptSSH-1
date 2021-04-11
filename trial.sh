@@ -7,7 +7,7 @@ hari="1"
 Pass=1
 
 
-echo Script AutoCreate Akun SSH dan OpenVPN by Horas
+echo Script AutoCreate Akun SSH dan OpenVPN by LostServer
 sleep 1
 echo Ping Host
 echo Cek Hak Akses...
@@ -30,13 +30,13 @@ echo -e "Password       : $Pass"
 echo -e "==============================="
 echo -e "Host           : $IP"
 echo -e "OpenSSH        : 22"
-echo -e "Dropbear       : 109, 110, 143, 456"
-echo -e "SSL/TLS        : 222, 443, 777, 990"
-echo -e "Port Squid     : 80, 3128, 8080 (limit to IP SSH)" 
+echo -e "Dropbear       : 143, 109"
+echo -e "SSL/TLS        : 443"
+echo -e "Port Squid     : 3128, 8080 (limit to IP SSH)" 
 echo -e "OpenVPN        : TCP 1194 http://$IP:81/client-tcp-1194.ovpn"
 echo -e "OpenVPN        : UDP 2200 http://$IP:81/client-udp-2200.ovpn"
-echo -e "OpenVPN        : SSL 442 http://$IP:81/client-tcp-ssl.ovpn"
-echo -e "badvpn         : 7100-7900"
+echo -e "OpenVPN        : SSL 992 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e "badvpn         : 7100, 7200, 7300"
 echo -e "==============================="
 echo -e "Aktif Sampai   : $exp"
 echo -e "Script by LostServer"
