@@ -244,7 +244,7 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://prem.vpnstores.net/add-host.sh"
+wget -O add-host "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/addhost.sh"
 wget -O about "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/about.sh"
 wget -O menu "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/menu.sh"
 wget -O usernew "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/usernew.sh"
