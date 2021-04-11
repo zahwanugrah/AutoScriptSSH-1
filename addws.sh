@@ -27,7 +27,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       "v": "2",
       "ps": "${user}",
       "add": "${domain}",
-      "port": "8443",
+      "port": "4443",
       "id": "${uuid}",
       "aid": "2",
       "net": "ws",
@@ -61,7 +61,7 @@ echo -e ""
 echo -e "==========-V2RAY/VMESS-=========="
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
-echo -e "port TLS       : 8443"
+echo -e "port TLS       : 4443"
 echo -e "port none TLS  : 80"
 echo -e "id             : ${uuid}"
 echo -e "alterId        : 2"
