@@ -22,10 +22,10 @@ cat <<EOF
 ================================
 SSTP VPN 
 Server IP     : $IP
-Host	      : ${domain}
+Host	        : ${domain}
 Username      : $user
 Password      : $pass
-Port          : 444
+Port          : 5555
 Cert          : http://$IP:81/cert.zip
 Expired Until : $exp
 ================================
