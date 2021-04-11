@@ -1,33 +1,33 @@
 #!/bin/bash
-IP=$(wget -qO- ifconfig.co);
-pass2="dg"
-psk="vpn"
-read -p "Username: " user
+IP=$(wget -qO- icanhazip.com);
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+		read -rp "Usernew: " -e user
+		CLIENT_EXISTS=$(grep -w $user /var/lib/premium-script/data-user-sstp | wc -l)
+
+		if [[ ${CLIENT_EXISTS} == '1' ]]; then
+			echo ""
+			echo "Akun sudah ada, silahkan masukkan password lain."
+			exit 1
+		fi
+	done
 read -p "Password: " pass
 read -p "Expired (days): " masaaktif
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"` 
-(printf "1\n\n\n$pass2\n"; sleep 1; printf "Hub $psk\n"; sleep 1; printf "UserCreate $user\n\n\n\n"; sleep 1; printf "UserPasswordSet $user\n$pass\n$pass\n"; sleep 1; printf "UserExpiresSet $user\n$exp 00:00:00\n") | /usr/local/vpnserver/./vpncmd &> /dev/null
-echo -e "\n### $user $exp">>"/var/lib/premium-script/data-user-sstp"
-tgl=$(echo "$exp" | cut -d- -f3)
-bln=$(echo "$exp" | cut -d- -f2)
-cat << EOF >> /etc/crontab
-# BEGIN_SSTP $user
-*/1 0 $tgl $bln * root printf "$user" | xp-sstp
-# END_SSTP $user
+exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+cat >> /home/sstp/sstp_account <<EOF
+$user * $pass *
 EOF
-service cron restart
+echo -e "### $user $exp">>"/var/lib/premium-script/data-user-sstp"
 clear
 cat <<EOF
 
 ================================
-SSTP VPN 
+SSTP VPN
 Server IP     : $IP
-Host	      : $host
 Username      : $user
 Password      : $pass
 Port          : 5555
-Cert          : http://$IP:81/cert.zip
-Expired Until : $exp
+Cert          : http://$IP:81/server.crt
+Expired On    : $exp
 ================================
 By LostServer
 EOF
