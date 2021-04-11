@@ -1,4 +1,10 @@
 #!/bin/bash
+source /var/lib/premium-script/ipvps.conf
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/v2ray/domain)
+else
+domain=$IP
+fi
 IP=$(wget -qO- ifconfig.co);
 pass2="dg"
 psk="vpn"
