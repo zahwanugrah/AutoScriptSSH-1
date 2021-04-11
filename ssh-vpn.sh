@@ -244,6 +244,7 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
+wget -O add-host "https://prem.vpnstores.net/add-host.sh"
 wget -O about "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/about.sh"
 wget -O menu "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/menu.sh"
 wget -O usernew "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/usernew.sh"
@@ -264,6 +265,7 @@ wget -O clear-log "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/m
 
 echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 
+chmod +x addhost
 chmod +x menu
 chmod +x usernew
 chmod +x trial
