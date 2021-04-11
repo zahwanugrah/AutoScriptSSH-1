@@ -18,7 +18,7 @@ rm -f /root/go.sh
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
-/root/.acme.sh/acme.sh --issue -d $domain --standalone --keylength ec-256
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 ~/.acme.sh/acme.sh --install-cert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cat> /etc/v2ray/config.json << END
@@ -30,7 +30,7 @@ cat> /etc/v2ray/config.json << END
   },
   "inbounds": [
     {
-      "port": 8443,
+      "port": 4443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -215,7 +215,7 @@ cat> /etc/v2ray/vless.json << END
   },
   "inbounds": [
     {
-      "port": 2083,
+      "port": 5443,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -311,7 +311,7 @@ cat> /etc/v2ray/vnone.json << END
   },
   "inbounds": [
     {
-      "port": 8880,
+      "port": 880,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -399,7 +399,7 @@ cat> /etc/v2ray/trojan.json <<END
   },
   "inbounds": [
     {
-      "port": 445,
+      "port": 6443,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -480,16 +480,16 @@ cat> /etc/v2ray/trojan.json <<END
   }
 }
 END
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 445 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 5443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 445 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 4443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 5443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8880 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
@@ -521,7 +521,7 @@ wget -O renewtr "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/mai
 wget -O xp-ws "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-ws.sh"
 wget -O xp-tr "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-tr.sh"
 wget -O xp-vless "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/xp-vless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/certv2ray.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/cert.sh"
 chmod +x addws
 chmod +x addvless
 chmod +x addtr
