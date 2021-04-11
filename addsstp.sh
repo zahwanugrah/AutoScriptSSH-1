@@ -22,7 +22,7 @@ cat <<EOF
 ================================
 SSTP VPN 
 Server IP     : $IP
-Host	      : $domain
+Host	      : $host
 Username      : $user
 Password      : $pass
 Port          : 5555
