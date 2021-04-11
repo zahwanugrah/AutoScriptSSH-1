@@ -46,7 +46,7 @@ cat > /etc/shadowsocks-libev/config.json <<END
     "timeout":60,
     "method":"aes-256-cfb",
     "fast_open":true,
-    "nameserver":"8.8.8.8",
+    "nameserver":"1.1.1.1",
     "mode":"tcp_and_udp",
 }
 END
