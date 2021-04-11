@@ -27,10 +27,10 @@ check_pid(){
 	PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
 }
 Add_iptables(){
-		iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 1443:1543 -j ACCEPT
-		iptables -I INPUT -m state --state NEW -m udp -p udp --dport 1443:1543 -j ACCEPT
-		ip6tables -I INPUT -m state --state NEW -m tcp -p tcp --dport 1443:1543 -j ACCEPT
-		ip6tables -I INPUT -m state --state NEW -m udp -p udp --dport 1443:1543 -j ACCEPT
+		iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 7443:7543 -j ACCEPT
+		iptables -I INPUT -m state --state NEW -m udp -p udp --dport 7443:7543 -j ACCEPT
+		ip6tables -I INPUT -m state --state NEW -m tcp -p tcp --dport 7443:7543 -j ACCEPT
+		ip6tables -I INPUT -m state --state NEW -m udp -p udp --dport 7443:7543 -j ACCEPT
 }
 Save_iptables(){
 if [[ ${OS} == "centos" ]]; then
