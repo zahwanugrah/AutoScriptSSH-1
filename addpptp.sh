@@ -34,6 +34,7 @@ cat <<EOF
 PPTP VPN
 
 Server IP    : $PUBLIC_IP
+Host         : $domain
 Username     : $VPN_USER
 Password     : $VPN_PASSWORD
 Expired On   : $exp
