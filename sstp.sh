@@ -28,7 +28,7 @@ locality=Indonesia
 organization=lostserver.xyz
 organizationalunit=lostserver.xyz
 commonname=lostserver.xyz
-email=admin@lostserver.xyz
+email=yovan83@gmail.com
 
 #install sstp
 apt install openssl iptables iptables-persistent -y
