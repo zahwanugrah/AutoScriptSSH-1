@@ -251,6 +251,7 @@ wget -O usernew "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/mai
 wget -O trial "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/trial.sh"
 wget -O hapus "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/hapus.sh"
 wget -O member "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/member.sh"
+wget -o webmin "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/webmin.sh"
 wget -O delete "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/delete.sh"
 wget -O cek "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/cek.sh"
 wget -O restart "https://raw.githubusercontent.com/syntax-er0r/AutoScriptSSH/main/restart.sh"
@@ -272,6 +273,7 @@ chmod +x trial
 chmod +x hapus
 chmod +x member
 chmod +x delete
+chmod +x webmin
 chmod +x cek
 chmod +x restart
 chmod +x speedtest
