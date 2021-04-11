@@ -22,8 +22,8 @@ sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vless.json
 sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vnone.json
-vlesslink1="vless://${uuid}@${domain}:2083?path=/v2ray&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:8880?path=/v2ray&encryption=none&type=ws#${user}"
+vlesslink1="vless://${uuid}@${domain}:5443?path=/v2ray&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:880?path=/v2ray&encryption=none&type=ws#${user}"
 systemctl restart v2ray@vless
 systemctl restart v2ray@vnone
 clear
@@ -31,8 +31,8 @@ echo -e ""
 echo -e "==========-V2RAY/VLESS-=========="
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
-echo -e "port TLS       : 2083"
-echo -e "port none TLS  : 8880"
+echo -e "port TLS       : 5443"
+echo -e "port none TLS  : 880"
 echo -e "id             : ${uuid}"
 echo -e "Encryption     : none"
 echo -e "network        : ws"
