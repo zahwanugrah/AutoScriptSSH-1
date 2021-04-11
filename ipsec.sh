@@ -105,8 +105,8 @@ L2TP_LOCAL=192.168.42.1
 L2TP_POOL=192.168.42.10-192.168.42.250
 XAUTH_NET=192.168.43.0/24
 XAUTH_POOL=192.168.43.10-192.168.43.250
-DNS_SRV1=8.8.8.8
-DNS_SRV2=8.8.4.4
+DNS_SRV1=1.1.1.1
+DNS_SRV2=1.0.0.1
 DNS_SRVS="\"$DNS_SRV1 $DNS_SRV2\""
 [ -n "$VPN_DNS_SRV1" ] && [ -z "$VPN_DNS_SRV2" ] && DNS_SRVS="$DNS_SRV1"
 
@@ -197,7 +197,7 @@ ipcp-accept-local
 ipcp-accept-remote
 noccp
 auth
-mtu 1280
+mtu 1500
 mru 1280
 proxyarp
 lcp-echo-failure 4
@@ -236,8 +236,8 @@ refuse-chap
 refuse-mschap
 require-mschap-v2
 require-mppe-128
-ms-dns 8.8.8.8
-ms-dns 8.8.4.4
+ms-dns 1.1.1.1
+ms-dns 1.0.0.1
 proxyarp
 lock
 nobsdcomp 
