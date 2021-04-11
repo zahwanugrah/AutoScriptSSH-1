@@ -33,7 +33,9 @@ fi
 	fi
 
 	# Adguard DNS by default
-	CLIENT_DNS_1="1.1.1.1, 8.8.8.8"
+	CLIENT_DNS_1="176.103.130.130"
+	
+	CLIENT_DNS_2="176.103.130.131"
 	MYIP=$(wget -qO- ifconfig.co);
 	read -p "Expired (days): " masaaktif
 	exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -47,7 +49,7 @@ fi
 	echo "[Interface]
 PrivateKey = $CLIENT_PRIV_KEY
 Address = $CLIENT_ADDRESS/24
-DNS = $CLIENT_DNS_1
+DNS = $CLIENT_DNS_1,$CLIENT_DNS_2
 
 [Peer]
 PublicKey = $SERVER_PUB_KEY
@@ -76,5 +78,6 @@ AllowedIPs = $CLIENT_ADDRESS/32" >>"/etc/wireguard/$SERVER_WG_NIC.conf"
 	echo -e "Wireguard	: http://$MYIP:81/$CLIENT_NAME.conf"
 	echo -e "==============================="
 	echo -e "Expired On     : $exp"
+	echo -e ""
 	echo -e "By LostServer"
 	rm -f /root/wg0-client-$CLIENT_NAME.conf
